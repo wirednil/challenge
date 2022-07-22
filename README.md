@@ -21,6 +21,8 @@ gcc ejer_1.c -o ejer
 make all
 ```
 Al hacer make se generan dos binarios client y server en la carpeta ./bin
+```bash
+```
 2. En una terminal ejecutar el programa server
 ```bash
 ./bin/server
