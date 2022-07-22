@@ -21,6 +21,12 @@ gcc ejer_1.c -o ejer
 make all
 ```
 Al hacer make se generan dos binarios client y server en la carpeta ./bin
+2. En una terminal ejecutar el programa server
+```bash
+./bin/server
+```
+3. En otra terminal ejecutar el programa client [1|0], donde 1 es con una tarjeta valida y 0 una tarjeta no valida.
+```bash
+./bin/client 1
+```
 
-### ToDo:
-Falta validar el request message que se envía desde client a server.
