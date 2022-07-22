@@ -1,5 +1,6 @@
 #include "Socket.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 const int BuffSize = 1024;
@@ -66,7 +67,8 @@ int RequestTime(int handle, int option_name, int maxTimeout) {
 	
 	if (setsockopt(handle, SOL_SOCKET, option_name, 
 				(char *)&s_timeval, sizeof(s_timeval)) == Error ) {
-		fprintf(stderr, "Time out.\n");
+		fprintf(stderr, "ERROR DE COMUNICACIÓN.\n");
+		exit(0);
 		return Error;
 	}
 	return Ok;

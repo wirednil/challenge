@@ -44,10 +44,17 @@ int main() {
 
 		printf("%s\n",buffer);
 
-		CheckRequestMessage(buffer);
+		bool encontrado = CheckRequestMessage(buffer);
+		sock sendfd;
 
-		sock sendfd = send(acceptfd, "Ok", strlen("OK"), 0);
-		if (sendfd = -1) {
+		// Sending Respond Message
+		if (encontrado) {
+			sendfd = send(acceptfd, "021000", strlen("021000"), 0);
+		} else {
+			sendfd = send(acceptfd, "021001", strlen("021001"), 0);
+		}
+
+		if (sendfd == -1) {
 			printf("Falló send.\n");
 			return -1;
 		}

@@ -5,6 +5,8 @@
 
 Transaccion* 
 CreaTransaccion(double monto, const char* numeroTarjeta, const char* codigoSeguridad) {
+	printf("Datos ingresados: \n\tMonto: %.2f\n\tNumero tarjeta: %s\n\tCodigo de seguridad: %s\n",
+			monto, numeroTarjeta, codigoSeguridad);
 	Transaccion *transaccion = malloc(sizeof(Transaccion));
 	transaccion->monto = monto;
 	strncpy(transaccion->numeroTarjeta, numeroTarjeta, strlen(numeroTarjeta));
